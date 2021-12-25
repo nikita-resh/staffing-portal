@@ -9,15 +9,31 @@ type Employee {
   is_removed: Boolean!
 }
 
+type EmployeeSkillLevel {
+  id: Float!
+  employee_id: Float!
+  skill_id: Float!
+  level_id: Float!
+}
+
 type Query {
   getAllEmployees: [Employee!]!
+  getAllEmployeesSkillLevel: [EmployeeSkillLevel!]!
+  getEmployeeSkillLevel(id: Int!): [EmployeeSkillLevel!]!
 }
 
 type Mutation {
   createEmployee(employee: CreateEmployeeInput!): Employee!
+  createEmployeeSkillLevel(createEmployeeSkillLevelInput: CreateEmployeeSkillLevelInput!): EmployeeSkillLevel!
 }
 
 input CreateEmployeeInput {
   name: String!
   role: String!
+}
+
+input CreateEmployeeSkillLevelInput {
+  employee_id: Float!
+  skill_id: Float!
+  level_id: Float!
 }
