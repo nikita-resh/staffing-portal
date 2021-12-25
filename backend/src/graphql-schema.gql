@@ -12,3 +12,12 @@ type Employee {
 type Query {
   getAllEmployees: [Employee!]!
 }
+
+type Mutation {
+  createEmployee(employee: CreateEmployeeInput!): Employee!
+}
+
+input CreateEmployeeInput {
+  name: String!
+  role: String!
+}
