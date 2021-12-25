@@ -1,15 +1,22 @@
 import { Field, ObjectType } from '@nestjs/graphql';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @ObjectType()
+@Entity()
 export class Employee {
   @Field()
-  id: string;
+  @PrimaryGeneratedColumn('increment')
+  id: number;
+
+  @Column()
   @Field()
-  firstName: string;
+  name: string;
+
+  @Column()
   @Field()
-  lastName: string;
+  role: string;
+
+  @Column('boolean', { default: false })
   @Field()
-  designation: string;
-  @Field({ nullable: true })
-  city: string;
+  is_removed: boolean;
 }
