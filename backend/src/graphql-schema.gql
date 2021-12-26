@@ -2,18 +2,19 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Employee {
-  id: Float!
-  name: String!
-  role: String!
-  is_removed: Boolean!
-}
-
 type EmployeeSkillLevel {
   id: Float!
   employee_id: Float!
   skill_id: Float!
   level_id: Float!
+}
+
+type Employee {
+  id: Float!
+  name: String!
+  role: String!
+  is_removed: Boolean!
+  SkillLevel: [EmployeeSkillLevel!]
 }
 
 type Query {

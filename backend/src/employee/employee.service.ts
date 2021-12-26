@@ -12,7 +12,7 @@ export class EmployeeService {
   ) {}
 
   async findAll(): Promise<Employee[]> {
-    return this.employeeRepository.find();
+    return this.employeeRepository.find({ relations: ['SkillLevel'] });
   }
 
   async create(employee: CreateEmployeeInput): Promise<Employee> {
