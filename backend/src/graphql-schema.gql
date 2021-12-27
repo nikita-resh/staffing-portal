@@ -10,7 +10,7 @@ type Skill {
 type EmployeeSkillLevel {
   id: Float!
   employee_id: Float
-  skill_id: Float!
+  skill: Skill
   level_id: Float!
 }
 

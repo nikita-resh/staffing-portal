@@ -5,7 +5,7 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 @ObjectType()
 @Entity()
 export class Skill {
-  @OneToMany(() => EmployeeSkillLevel, (esl) => esl.skill_id)
+  @OneToMany(() => EmployeeSkillLevel, (esl) => esl.skill)
   ESL: EmployeeSkillLevel[];
 
   @Field()

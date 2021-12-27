@@ -19,7 +19,7 @@ export class EmployeeSkillLevelService {
   }
 
   async findAll(): Promise<EmployeeSkillLevel[]> {
-    return this.employeeSkillLevelRepository.find({ relations: ['skill_id'] });
+    return this.employeeSkillLevelRepository.find({ relations: ['skill'] });
   }
 
   async findEmployeeSkils(id: number): Promise<EmployeeSkillLevel[]> {

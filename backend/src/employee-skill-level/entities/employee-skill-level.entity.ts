@@ -14,10 +14,10 @@ export class EmployeeSkillLevel {
   @Field({ nullable: true })
   employee_id: number;
 
-  @Column()
+  // @Column()
   @ManyToOne(() => Skill, (skill) => skill.ESL)
-  @Field({ nullable: false })
-  skill_id: number;
+  @Field({ nullable: true })
+  skill: Skill;
 
   @Column()
   @Field({ nullable: false })
