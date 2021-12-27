@@ -12,13 +12,7 @@ export class EmployeeService {
   ) {}
 
   async findAll() {
-    return this.employeeRepository
-      .createQueryBuilder('employee')
-      .leftJoinAndSelect('employee.SkillLevel', 'employee_skill_level')
-      .where('employee.id = employee_skill_level.employee_id')
-      .leftJoinAndSelect('employee_skill_level.skill_id', 'skill')
-      .where('employee_skill_level.skill_id = skill.id')
-      .getMany();
+    return this.employeeRepository.find({ relations: ['SkillLevel'] });
   }
 
   async create(employee: CreateEmployeeInput): Promise<Employee> {
