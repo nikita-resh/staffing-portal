@@ -2,9 +2,14 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Skill {
+  id: Float!
+  skill_name: String!
+}
+
 type EmployeeSkillLevel {
   id: Float!
-  employee_id: Float!
+  employee_id: Float
   skill_id: Float!
   level_id: Float!
 }
@@ -15,11 +20,6 @@ type Employee {
   role: String!
   is_removed: Boolean!
   SkillLevel: [EmployeeSkillLevel!]
-}
-
-type Skill {
-  id: Float!
-  skill_name: String!
 }
 
 type Query {
