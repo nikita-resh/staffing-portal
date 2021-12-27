@@ -4,11 +4,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { EmployeeModule } from './employee/employee.module';
 import { EmployeeSkillLevelModule } from './employee-skill-level/employee-skill-level.module';
+import { SkillModule } from './skill/skill.module';
 
 @Module({
   imports: [
     EmployeeModule,
     EmployeeSkillLevelModule,
+    SkillModule,
     GraphQLModule.forRoot({
       autoSchemaFile: join(process.cwd(), 'src/graphql-schema.gql'),
     }),

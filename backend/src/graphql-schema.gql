@@ -17,15 +17,23 @@ type Employee {
   SkillLevel: [EmployeeSkillLevel!]
 }
 
+type Skill {
+  id: Float!
+  skill_name: String!
+}
+
 type Query {
   getAllEmployees: [Employee!]!
   getAllEmployeesSkillLevel: [EmployeeSkillLevel!]!
   getEmployeeSkillLevel(id: Int!): [EmployeeSkillLevel!]!
+  getAllSkills: [Skill!]!
+  getSkill(id: Int!): Skill!
 }
 
 type Mutation {
   createEmployee(employee: CreateEmployeeInput!): Employee!
   createEmployeeSkillLevel(createEmployeeSkillLevelInput: CreateEmployeeSkillLevelInput!): EmployeeSkillLevel!
+  createSkill(createSkillInput: CreateSkillInput!): Skill!
 }
 
 input CreateEmployeeInput {
@@ -37,4 +45,8 @@ input CreateEmployeeSkillLevelInput {
   employee_id: Float!
   skill_id: Float!
   level_id: Float!
+}
+
+input CreateSkillInput {
+  skill_name: String!
 }
